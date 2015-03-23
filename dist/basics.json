@@ -1,0 +1,106 @@
+{
+	"name" : "basics",
+	"items" : [
+		{
+			"type" : "Entity",
+			"name" : "GameEntity",
+			"position" : {
+				"x" : 0,
+				"y" : 0
+			},
+			"children" :
+			[
+				{
+					"type" : "Entity",
+					"name" : "BabyEntity",
+					"position" : {
+						"x" : 50,
+						"y" : 50
+					},
+					"components" :
+					[
+						{
+							"type" : "Sprite",
+							"window" : "Main",
+							"draworder" : 1,
+							"size" :
+							{
+								"x" : 10,
+								"y" : 10
+							}
+						},
+						{
+							"type" : "GaMovement",
+							"position" : 
+							{
+								"x" : 0,
+								"y" : 0
+							},
+							"radius" : 50,
+							"direction" : -1,
+							"key" : "a"
+						}
+
+
+					]
+				}
+			],
+			"components" :
+			[
+				{
+					"type" : "Texture",
+					"texture" : "player1.png",
+					"name" : "Player_Texture"
+				},
+				{
+					"type" : "Sprite",
+					"window" : "Main",
+					"texture" : "Player_Texture",
+					"draworder" : 1,
+					"size" :
+					{
+						"x" : 30,
+						"y" : 30
+					}
+				},
+				{
+					"type" : "GaMovement",
+					"position" : 
+					{
+						"x" : 100,
+						"y" : 100
+					},
+					"radius" : 50,
+					"direction" : 1,
+					"key" : "d"
+				},
+				{
+					"type" : "Vertices",
+					"primitivetype" : "TrianglesStrip",
+					"window" : "Main",
+					"draworder" : 0,
+					"vertices" : [
+						{
+							"position" : "0 0 0",
+							"colour" : "255 0 0",
+							"texturecoords" : "0 0"
+						},
+						{
+							"position" : "50 100 0",
+							"colour" : "0 255 0",
+							"texturecoords" : "0 0"
+						},
+						{
+							"position" : "100 50 0",
+							"colour" : "0 0 255",
+							"texturecoords" : "0 0"
+						}
+					
+					]
+				
+				}
+
+			]
+		}
+	]
+}

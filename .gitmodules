@@ -1,0 +1,6 @@
+[submodule "bubblewrap"]
+	path = bubblewrap
+	url = https://github.com/Dezzles/bubblewrap.git
+[submodule "bubblewrap_sfml"]
+	path = bubblewrap_sfml
+	url = https://github.com/Dezzles/bubblewrap_sfml.git
