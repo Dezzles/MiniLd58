@@ -12,7 +12,6 @@ solution "BubbleWrap"
 -- Build externals.
 dofile ("bubblewrap/External/genie.lua")
 
-loadLibrary( "bubblewrap_box2d" )
 loadLibrary( "bubblewrap_sfml" )
 
 -- Build engine.

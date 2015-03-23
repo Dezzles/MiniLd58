@@ -2,14 +2,21 @@
 #include "Bubblewrap/Managers/Container.hpp"
 #include "Bubblewrap/Render/Window.hpp"
 #include "Bubblewrap/Render/Types.hpp"
-#include "GaMovement.hpp"
+#include "GaPaddle.hpp"
+#include "GaPong.hpp"
+#include "GaLevel.hpp"
 #include "Bubblewrap/Events/Event.hpp"
 
 #include "Bubblewrap/Registers/BubblewrapSfmlGraphicsRegister.hpp"
 #include "Bubblewrap/Registers/BubblewrapSfmlSoundRegister.hpp"
-
+#include "Bubblewrap/Math/Bounds1.hpp"
+#include "Bubblewrap/Math/Bounds2.hpp"
+#include "Bubblewrap/Math/Bounds3.hpp"
 int main()
 {
+	Bubblewrap::Math::Bounds1f test( 0.0f, 1.0f );
+	Bubblewrap::Math::Bounds2f test1( 0.0f, 1.0f, 1.0f, 3.0f );
+	Bubblewrap::Math::Bounds3f test2( 0.0f, 1.0f, 1.0f, 2.0f, -1.0f, 0.0f );
 	Bubblewrap::Render::Colour Colour("255 255 255 128");
 	Bubblewrap::Game::GoGameSettings settings;
 	settings.WindowCount_ = 1;
@@ -22,10 +29,12 @@ int main()
 	settings.Registers_.push_back( Bubblewrap::Registers::SfmlSoundRegister::Register );
 	settings.TypeRegistration_ = ( [ ]( Bubblewrap::Base::ObjectRegister* Register )
 	{
-		Register->RegisterCreator( "GaMovement", GaMovement::Create, GaMovement::CreateJson, GaMovement::CopyDef );
+		Register->RegisterCreator( "GaPaddle", GaPaddle::Create, GaPaddle::CreateJson, GaPaddle::CopyDef );
+		Register->RegisterCreator( "GaPong", GaPong::Create, GaPong::CreateJson, GaPong::CopyDef );
+		Register->RegisterCreator( "GaLevel", GaLevel::Create, GaLevel::CreateJson, GaLevel::CopyDef );
 	} );
 	settings.Packages_.push_back( "basics.json" );
-	settings.BaseObject_ = "basics:GameEntity";
+	settings.BaseObject_ = "basics:LevelEntity";
 	Bubblewrap::Game::Game Game;
 	Game.Run( settings );
 }

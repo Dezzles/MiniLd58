@@ -1,4 +1,4 @@
-project "7DRL"
+project "PongVorce"
 	kind "ConsoleApp"
 	language "C++"
 	files { "**.h", "**.hpp", "**.cpp" }

@@ -3,104 +3,168 @@
 	"items" : [
 		{
 			"type" : "Entity",
-			"name" : "GameEntity",
+			"name" : "LevelEntity",
 			"position" : {
 				"x" : 0,
 				"y" : 0
 			},
-			"children" :
-			[
+			"children" : [
 				{
 					"type" : "Entity",
-					"name" : "BabyEntity",
+					"name" : "PongBall",
 					"position" : {
 						"x" : 50,
-						"y" : 50
+						"y" : 0
 					},
+					"children" :
+					[
+					],
 					"components" :
 					[
 						{
+							"type" : "Texture",
+							"texture" : "player1.png",
+							"name" : "Child"
+						},
+						{
 							"type" : "Sprite",
 							"window" : "Main",
+							"texture" : "Player_Texture",
 							"draworder" : 1,
 							"size" :
 							{
-								"x" : 10,
-								"y" : 10
+								"x" : 15,
+								"y" : 50
 							}
 						},
 						{
-							"type" : "GaMovement",
-							"position" : 
-							{
-								"x" : 0,
-								"y" : 0
-							},
-							"radius" : 50,
-							"direction" : -1,
-							"key" : "a"
+							"type" : "GaPong",
+							"movementSpeed" : 150,
+							"minLocation" : 50,
+							"maxLocation" : 550,
+							"xPosition" : 400
 						}
 
+					]
+				},
+				{
+					"type" : "Entity",
+					"name" : "PlayerPong",
+					"position" : {
+						"x" : 50,
+						"y" : 0
+					},
+					"children" :
+					[
+					],
+					"components" :
+					[
+						{
+							"type" : "Texture",
+							"texture" : "player1.png",
+							"name" : "Player_Texture"
+						},
+						{
+							"type" : "Sprite",
+							"window" : "Main",
+							"texture" : "Player_Texture",
+							"draworder" : 1,
+							"size" :
+							{
+								"x" : 30,
+								"y" : 100
+							}
+						},
+						{
+							"type" : "GaPaddle",
+							"isPlayer" : true,
+							"movementSpeed" : 150,
+							"minLocation" : 50,
+							"maxLocation" : 550,
+							"xPosition" : 100
+						}
+
+					]
+				},
+				{
+					"type" : "Entity",
+					"name" : "EnemyPong",
+					"position" : {
+						"x" : 50,
+						"y" : 0
+					},
+					"children" :
+					[
+					],
+					"components" :
+					[
+						{
+							"type" : "Texture",
+							"texture" : "player1.png",
+							"name" : "Player_Texture"
+						},
+						{
+							"type" : "Sprite",
+							"window" : "Main",
+							"texture" : "Player_Texture",
+							"draworder" : 1,
+							"size" :
+							{
+								"x" : 30,
+								"y" : 100
+							}
+						},
+						{
+							"type" : "GaPaddle",
+							"isPlayer" : true,
+							"movementSpeed" : 150,
+							"minLocation" : 50,
+							"maxLocation" : 550,
+							"xPosition" : 700
+						}
 
 					]
 				}
 			],
-			"components" :
-			[
+			"components" : [
 				{
-					"type" : "Texture",
-					"texture" : "player1.png",
-					"name" : "Player_Texture"
-				},
-				{
-					"type" : "Sprite",
-					"window" : "Main",
-					"texture" : "Player_Texture",
-					"draworder" : 1,
-					"size" :
-					{
-						"x" : 30,
-						"y" : 30
-					}
-				},
-				{
-					"type" : "GaMovement",
-					"position" : 
-					{
-						"x" : 100,
-						"y" : 100
-					},
-					"radius" : 50,
-					"direction" : 1,
-					"key" : "d"
+					"type" : "GaLevel"
 				},
 				{
 					"type" : "Vertices",
-					"primitivetype" : "TrianglesStrip",
 					"window" : "Main",
 					"draworder" : 0,
+					"primitiveType" : "LinesStrip",
 					"vertices" : [
 						{
-							"position" : "0 0 0",
-							"colour" : "255 0 0",
-							"texturecoords" : "0 0"
+							"position" : "50 50 0",
+							"colour" : "255 255 255 255",
+							"texCoords" : "0.0 0.0"
 						},
 						{
-							"position" : "50 100 0",
-							"colour" : "0 255 0",
-							"texturecoords" : "0 0"
+							"position" : "750 50 0",
+							"colour" : "255 255 255 255",
+							"texCoords" : "1.0 0.0"
 						},
 						{
-							"position" : "100 50 0",
-							"colour" : "0 0 255",
-							"texturecoords" : "0 0"
+							"position" : "750 550 0",
+							"colour" : "255 255 255 255",
+							"texCoords" : "1.0 1.0"
+						},
+						{
+							"position" : "50 550 0",
+							"colour" : "255 255 255 255",
+							"texCoords" : "0.0 1.0"
+						},
+						{
+							"position" : "50 50 0",
+							"colour" : "255 255 255 255",
+							"texCoords" : "0.0 0.0"
 						}
 					
 					]
-				
 				}
-
 			]
-		}
+		]
 	]
 }

@@ -1,5 +1,5 @@
-#ifndef GAMOVEMENT_HPP
-#define GAMOVEMENT_HPP
+#ifndef GALEVEL_HPP
+#define GALEVEL_HPP
 
 #include "Bubblewrap/Base/Defines.hpp"
 #include "Bubblewrap/Base/Component.hpp"
@@ -7,28 +7,21 @@
 #include "Bubblewrap/Math/Vector2.hpp"
 #include "Bubblewrap/Events/Events.hpp"
 
-class GaMovement : public Bubblewrap::Base::Component
+class GaLevel : public Bubblewrap::Base::Component
 { 
 public:
-	GaMovement();
+	GaLevel();
 	void Initialise( Json::Value Params );
 
 	void Update( float dt );
-	CREATE_REGISTER( GaMovement );
+	CREATE_REGISTER( GaLevel );
 
 	virtual void OnAttach();
 	virtual void OnDetach();
 	void InputFunction( Bubblewrap::Events::Event* Event );
 private:
-	Bubblewrap::Math::Vector2f Position_;
-	float Direction_;
-	float Radius_;
-	float Theta_;
-	
-	Bubblewrap::Events::Key Key_;
 
 
-	unsigned int InputIdx_;
 };
 
 
