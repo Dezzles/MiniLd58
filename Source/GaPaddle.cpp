@@ -75,3 +75,8 @@ void GaPaddle::OnDetach()
 {
 	GetManager().GetEventManager().DeregisterEvent( InputIdx_ );
 }
+
+Bubblewrap::Math::Vector2f GaPaddle::GetSize()
+{
+	return SpriteSize_;
+}

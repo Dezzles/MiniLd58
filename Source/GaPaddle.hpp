@@ -19,6 +19,8 @@ public:
 	virtual void OnAttach();
 	virtual void OnDetach();
 	void InputFunction( Bubblewrap::Events::Event* Event );
+
+	Bubblewrap::Math::Vector2f GetSize();
 private:
 	bool IsPlayer_;
 	unsigned int InputIdx_;

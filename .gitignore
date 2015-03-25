@@ -26,3 +26,18 @@
 *.exe
 *.out
 *.app
+
+# Build folder
+*.tlog
+*.log
+*.ilk
+*.user
+*.filters
+*.vcxproj
+*.idb
+*.pdb
+*.opensdf
+*.sdf
+*.sln
+*.suo
+build/

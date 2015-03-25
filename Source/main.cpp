@@ -27,6 +27,7 @@ int main()
 	settings.WindowSettings_[ 0 ].Name_ = "Main";
 	settings.Registers_.push_back( Bubblewrap::Registers::SfmlGraphicsRegister::Register );
 	settings.Registers_.push_back( Bubblewrap::Registers::SfmlSoundRegister::Register );
+	settings.Resources_.push_back( "textures" );
 	settings.TypeRegistration_ = ( [ ]( Bubblewrap::Base::ObjectRegister* Register )
 	{
 		Register->RegisterCreator( "GaPaddle", GaPaddle::Create, GaPaddle::CreateJson, GaPaddle::CopyDef );

@@ -6,7 +6,8 @@
 #include "Bubblewrap/Base/Base.hpp"
 #include "Bubblewrap/Math/Vector2.hpp"
 #include "Bubblewrap/Events/Events.hpp"
-
+#include "GaLevel.hpp"
+#include "GaPaddle.hpp"
 class GaPong : public Bubblewrap::Base::Component
 { 
 public:
@@ -23,11 +24,14 @@ private:
 
 	float MovementSpeed_;
 
-	float MinLocation_;
-	float MaxLocation_;
-	float XPosition_;
-
 	Bubblewrap::Math::Vector2f SpriteSize_;
+	GaLevel* Level_;
+
+	Bubblewrap::Math::Vector2f MoveDirection_;
+
+	std::vector<GaPaddle*> Paddles_;
+
+	GaPaddle* CheckForCollisions();
 };
 
 

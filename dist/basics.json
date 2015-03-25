@@ -22,14 +22,9 @@
 					"components" :
 					[
 						{
-							"type" : "Texture",
-							"texture" : "player1.png",
-							"name" : "Child"
-						},
-						{
 							"type" : "Sprite",
 							"window" : "Main",
-							"texture" : "Player_Texture",
+							"texture" : "textures:Paddle",
 							"draworder" : 1,
 							"size" :
 							{
@@ -39,7 +34,7 @@
 						},
 						{
 							"type" : "GaPong",
-							"movementSpeed" : 150,
+							"movementSpeed" : 0.1,
 							"minLocation" : 50,
 							"maxLocation" : 550,
 							"xPosition" : 400
@@ -60,14 +55,20 @@
 					"components" :
 					[
 						{
-							"type" : "Texture",
-							"texture" : "player1.png",
-							"name" : "Player_Texture"
+							"type" : "Text",
+							"name" : "Title",
+							"position" : "0 -75",
+							"colour" : "255 255 255 255",
+							"font" : "textures:TitleFont",
+							"window" : "Main",
+							"layer" : 20,
+							"text" : "Jerkbag #1",
+							"characterSize" : 16
 						},
 						{
 							"type" : "Sprite",
 							"window" : "Main",
-							"texture" : "Player_Texture",
+							"texture" : "textures:Paddle",
 							"draworder" : 1,
 							"size" :
 							{
@@ -99,14 +100,9 @@
 					"components" :
 					[
 						{
-							"type" : "Texture",
-							"texture" : "player1.png",
-							"name" : "Player_Texture"
-						},
-						{
 							"type" : "Sprite",
 							"window" : "Main",
-							"texture" : "Player_Texture",
+							"texture" : "textures:Paddle",
 							"draworder" : 1,
 							"size" :
 							{
@@ -128,7 +124,22 @@
 			],
 			"components" : [
 				{
-					"type" : "GaLevel"
+					"type" : "Text",
+					"name" : "Title",
+					"position" : "400 300",
+					"colour" : "255 255 255 255",
+					"font" : "textures:TitleFont",
+					"window" : "Main",
+					"layer" : 20,
+					"text" : "Heading",
+					"characterSize" : 16
+				},
+				{
+					"type" : "GaLevel",
+					"left" : 50,
+					"right" : 750,
+					"top" : 50,
+					"bottom" : 550
 				},
 				{
 					"type" : "Vertices",
