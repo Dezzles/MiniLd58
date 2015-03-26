@@ -4,6 +4,7 @@
 #include "Bubblewrap/Render/Types.hpp"
 #include "GaPaddle.hpp"
 #include "GaPong.hpp"
+#include "GaTextController.hpp"
 #include "GaLevel.hpp"
 #include "Bubblewrap/Events/Event.hpp"
 
@@ -33,6 +34,7 @@ int main()
 		Register->RegisterCreator( "GaPaddle", GaPaddle::Create, GaPaddle::CreateJson, GaPaddle::CopyDef );
 		Register->RegisterCreator( "GaPong", GaPong::Create, GaPong::CreateJson, GaPong::CopyDef );
 		Register->RegisterCreator( "GaLevel", GaLevel::Create, GaLevel::CreateJson, GaLevel::CopyDef );
+		Register->RegisterCreator( "GaTextController", GaTextController::Create, GaTextController::CreateJson, GaTextController::CopyDef );
 	} );
 	settings.Packages_.push_back( "basics.json" );
 	settings.BaseObject_ = "basics:LevelEntity";

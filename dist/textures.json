@@ -10,6 +10,53 @@
 			"type" : "Font",
 			"fontFile" : "arial.ttf",
 			"name" : "TitleFont"
+		},
+		{
+			"type" : "StringList",
+			"name" : "ParentalInsults",
+			"items" : [
+				"I have to work",
+				"Got plans with the boyfriend",
+				"Got plans with the girlfriend",
+				"Got plans with your mum",
+				"Got plans with the real dad",
+				"Got plans with your dad",
+				"I have potatoes to peel",
+				"There's a game jam on!",
+				"I'll be in prison",
+				"I'm travelling... somewhere",
+				"I will literally murder the child...",
+				"I'll be drunk",
+				"I'll be playing CAH",
+				"I'm learning a new programming language",
+				"I'm hosting a party",
+				"I'm hosting your mum",
+				"Trying to take over the world",
+				"I have chlamydia",
+				"Getting tested for Elbow herpes",
+				"Working my boss",
+				"I'm constipated",
+				"I have diarrhea",
+				"I'm an anti-vaxxer",
+				"I got a pool and no fence",
+				"Checking into a mental health facility",
+				"Doing your doctor",
+				"Playing with my new Neilogd Blow-up doll",
+				"Voxel will be over",
+				"I'm helping BlackBird change his name",
+				"I'm telling people on\nthe internet that they're wrong!",
+				"I thought it was your turn",
+				"Can't your parents have them?",
+				"Can't you get a babysitter?",
+				"My father's in hospital\nOr will be anyway...",
+				"I don't want to",
+				"The house is haunted",
+				"I have the exorcist coming this weekend",
+				"I fell down",
+				"My house burned down",
+				"My house is full of peanuts and\nwe both know the kid's allergic"
+			]
+		
 		}
 	
 	]

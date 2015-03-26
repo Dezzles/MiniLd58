@@ -34,10 +34,12 @@
 						},
 						{
 							"type" : "GaPong",
-							"movementSpeed" : 0.1,
 							"minLocation" : 50,
 							"maxLocation" : 550,
-							"xPosition" : 400
+							"xPosition" : 400,
+							"minSpeed" : 200,
+							"maxSpeed" : 400,
+							"multiplier" : 1.1
 						}
 
 					]
@@ -63,7 +65,9 @@
 							"window" : "Main",
 							"layer" : 20,
 							"text" : "Jerkbag #1",
-							"characterSize" : 16
+							"characterSize" : 16,
+							"hAlign" : "left",
+							"vAlign" : "bottom"
 						},
 						{
 							"type" : "Sprite",
@@ -83,8 +87,12 @@
 							"minLocation" : 50,
 							"maxLocation" : 550,
 							"xPosition" : 100
+						},
+						{
+							"type" : "GaTextController",
+							"stringList" : "textures:ParentalInsults",
+							"displayTime" : 2.0
 						}
-
 					]
 				},
 				{
@@ -99,6 +107,19 @@
 					],
 					"components" :
 					[
+						{
+							"type" : "Text",
+							"name" : "Title",
+							"position" : "0 -75",
+							"colour" : "255 255 255 255",
+							"font" : "textures:TitleFont",
+							"window" : "Main",
+							"layer" : 20,
+							"text" : "Jerkbag #2",
+							"characterSize" : 16,
+							"hAlign" : "right",
+							"vAlign" : "bottom"
+						},
 						{
 							"type" : "Sprite",
 							"window" : "Main",
@@ -117,6 +138,11 @@
 							"minLocation" : 50,
 							"maxLocation" : 550,
 							"xPosition" : 700
+						},
+						{
+							"type" : "GaTextController",
+							"stringList" : "textures:ParentalInsults",
+							"displayTime" : 2.0
 						}
 
 					]
@@ -132,7 +158,9 @@
 					"window" : "Main",
 					"layer" : 20,
 					"text" : "Heading",
-					"characterSize" : 16
+					"characterSize" : 16,
+					"hAlign" : "centre",
+					"vAlign" : "centre"
 				},
 				{
 					"type" : "GaLevel",

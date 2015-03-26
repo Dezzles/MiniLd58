@@ -6,6 +6,7 @@
 #include "Bubblewrap/Base/Base.hpp"
 #include "Bubblewrap/Math/Vector2.hpp"
 #include "Bubblewrap/Events/Events.hpp"
+#include "Bubblewrap/Math/Bounds1.hpp"
 #include "GaLevel.hpp"
 #include "GaPaddle.hpp"
 class GaPong : public Bubblewrap::Base::Component
@@ -21,8 +22,10 @@ public:
 	virtual void OnDetach();
 	void InputFunction( Bubblewrap::Events::Event* Event );
 private:
-
-	float MovementSpeed_;
+	float Multiplier_;
+	float CurrentSpeed_;
+	Bubblewrap::Math::Bounds1f SpeedBounds_;
+	
 
 	Bubblewrap::Math::Vector2f SpriteSize_;
 	GaLevel* Level_;

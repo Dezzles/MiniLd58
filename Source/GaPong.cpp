@@ -3,20 +3,26 @@
 #include "Bubblewrap/Events/EventKeyInput.hpp"
 #include "Bubblewrap/Managers/Managers.hpp"
 #include "Bubblewrap/Render/Sprite.hpp"
+#include "GaEvents.hpp"
 GaPong::GaPong()
 {
 }
 
 void GaPong::Initialise( Json::Value Params )
 {
-	MovementSpeed_ = Params[ "movementSpeed" ].asFloat();
+	Multiplier_ = Params[ "multiplier" ].asFloat();
+	float lowerSpeed = Params[ "minSpeed" ].asFloat();
+	float upperSpeed = Params[ "maxSpeed" ].asFloat();
+	SpeedBounds_.SetBounds( lowerSpeed, upperSpeed );
+	CurrentSpeed_ = SpeedBounds_.Lower();
 }
 
 void GaPong::Update( float dt )
 {
+	Bubblewrap::Math::Vector2f StartPos = GetParentEntity()->WorldPosition();
 	Bubblewrap::Math::Vector2f pos = GetParentEntity()->LocalPosition();
 
-	pos = pos + MoveDirection_ * MovementSpeed_;
+	pos = pos + MoveDirection_ * CurrentSpeed_ * dt;
 
 	Bubblewrap::Math::Bounds1f bounds = Level_->GetBounds( pos.X() );
 	Bubblewrap::Math::Bounds1f sideBounds = Level_->GetSideBounds( );
@@ -47,19 +53,23 @@ void GaPong::Update( float dt )
 	{
 		
 		// MoveDirection_.SetX( -MoveDirection_.X() );
-		MoveDirection_ = ( pos - Hit->GetParentEntity()->WorldPosition() ).Normalised();
-		MovementSpeed_ *= 1.1f;
-		pos = pos + 2.0f * MoveDirection_ * MovementSpeed_;
+		MoveDirection_ = ( GetParentEntity()->WorldPosition() - Hit->GetParentEntity()->WorldPosition() ).Normalised();
+		CurrentSpeed_ = SpeedBounds_.Restrict( CurrentSpeed_ * Multiplier_ );
+		pos = pos + 2.0f * MoveDirection_ * CurrentSpeed_ * dt;
+		Bubblewrap::Events::Event evt( GaCollissionEvent, new GaCollisionEvent( Hit->GetParentEntity() ) );
+		GetManager().GetEventManager().SendMessage(evt);
 		printf("COLLISION DETECTED\n");
 	}
 
-
-	GetParentEntity()->SetLocalPosition(pos);
+	GetParentEntity()->SetLocalPosition( pos );
+	Bubblewrap::Math::Vector2f EndPos = GetParentEntity()->WorldPosition();
 }
 
 void GaPong::Copy( GaPong* Target, GaPong* Base )
 {	
-	Target->MovementSpeed_ = Base->MovementSpeed_;
+	Target->SpeedBounds_ = Base->SpeedBounds_;
+	Target->Multiplier_ = Base->Multiplier_;
+	Target->CurrentSpeed_ = Base->CurrentSpeed_;
 }
 
 void GaPong::InputFunction( Bubblewrap::Events::Event* Event )
