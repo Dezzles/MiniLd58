@@ -54,7 +54,52 @@
 				"I have the exorcist coming this weekend",
 				"I fell down",
 				"My house burned down",
-				"My house is full of peanuts and\nwe both know the kid's allergic"
+				"My house is full of peanuts and\nwe both know the kid's allergic",
+				"You take the little brat.",
+				"They're your favourite.",
+				"You're thick as pig shit.",
+				"Its not mine",
+				"I'm on a cleanse ",
+				"It's a steam sale weekend ",
+				"It's LudumDare weekend.",
+				"I have to kick stupid people from IRC channels",
+				"I'm getting tested",
+				"I'm finding out if another kid is mine",
+				"They keep eating all of my chocolate!",
+				"They keep eating all of my cheese!",
+				"They drink all of my beer",
+				"They drink all of my wine",
+				"The always want help with their homework",
+				"I'm getting sterilised so I won't have another",
+				"I just wanna watch porn all weekend",
+				"I'm acting in porn all weekend",
+				"I'm directing porn all weekend",
+				"Your mum and I are acting in\nporn all weekend. Don't tell her",
+				"I'm working with the Illudumati this weekend",
+				"I'm helping restore LDTP this weekend",
+				"I'm going to war with LDTP this weekend",
+				"I will convert that child to LDTO!",
+				"I will convert that child to LDTD!"
+				
+			]
+		
+		},
+		{
+			"type" : "ResourceList",
+			"name" : "AdultTextures",
+			"items" : [
+					{
+						"type" : "Texture",
+						"texture" : "player1.png",
+						"name" : "Adult1"
+					},
+					{
+						"type" : "Texture",
+						"texture" : "player2.png",
+						"name" : "Adult2"
+					}
+			
+			
 			]
 		
 		}

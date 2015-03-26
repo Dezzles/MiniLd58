@@ -58,7 +58,8 @@ void GaPong::Update( float dt )
 		pos = pos + 2.0f * MoveDirection_ * CurrentSpeed_ * dt;
 		Bubblewrap::Events::Event evt( GaCollissionEvent, new GaCollisionEvent( Hit->GetParentEntity() ) );
 		GetManager().GetEventManager().SendMessage(evt);
-		printf("COLLISION DETECTED\n");
+		printf("Current Speed: %f\n", CurrentSpeed_);
+		GetParentEntity()->Destroy();
 	}
 
 	GetParentEntity()->SetLocalPosition( pos );
@@ -85,7 +86,7 @@ void GaPong::OnAttach()
 
 	SpriteSize_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Render::Sprite>()[ 0 ]->GetSize();
 
-	MoveDirection_ = Bubblewrap::Math::Vector2f(1000 - rand() % 2000, 1000 - rand() % 2000 ).Normalised();
+	MoveDirection_ = Bubblewrap::Math::Vector2f(3000 - rand() % 6000, 1000 - rand() % 2000 ).Normalised();
 	Paddles_ = GetParentEntity()->GetRootEntity()->GetComponentsByTypeAnyChild<GaPaddle>();
 }
 
