@@ -7,6 +7,7 @@
 #include "Bubblewrap/Math/Vector2.hpp"
 #include "Bubblewrap/Events/Events.hpp"
 #include "Bubblewrap/Math/Bounds1.hpp"
+#include "Bubblewrap/Sound/Sound.hpp"
 #include "GaLevel.hpp"
 #include "GaPaddle.hpp"
 class GaPong : public Bubblewrap::Base::Component
@@ -25,16 +26,18 @@ private:
 	float Multiplier_;
 	float CurrentSpeed_;
 	Bubblewrap::Math::Bounds1f SpeedBounds_;
-	
+
 
 	Bubblewrap::Math::Vector2f SpriteSize_;
 	GaLevel* Level_;
 
-	Bubblewrap::Math::Vector2f MoveDirection_;
+	Bubblewrap::Math::Vector3f MoveDirection_;
 
 	std::vector<GaPaddle*> Paddles_;
 
 	GaPaddle* CheckForCollisions();
+
+	Bubblewrap::Audio::Sound* Sound_;
 };
 
 

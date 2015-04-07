@@ -20,7 +20,7 @@ void GaPaddle::Initialise( Json::Value Params )
 
 void GaPaddle::Update( float dt )
 {
-	Bubblewrap::Math::Vector2f pos = GetParentEntity()->LocalPosition();
+	Bubblewrap::Math::Vector3f pos = GetParentEntity()->LocalPosition();
 
 	float moveSpeed = 0.0f;
 	if ( UpKeyDown_ )
@@ -28,12 +28,12 @@ void GaPaddle::Update( float dt )
 	if ( DownKeyDown_ )
 		moveSpeed += 1.0f;
 
-	pos = pos + Bubblewrap::Math::Vector2f(0.0f, moveSpeed * dt * MovementSpeed_);
+	pos = pos + Bubblewrap::Math::Vector3f(0.0f, moveSpeed * dt * MovementSpeed_, 0.0f);
 
 	if ( pos.Y() - SpriteSize_.Y() * .5f <= MinLocation_ )
-		pos = Bubblewrap::Math::Vector2f( pos.X(), MinLocation_ + SpriteSize_.Y() / 2.0f );
+		pos = Bubblewrap::Math::Vector3f( pos.X(), MinLocation_ + SpriteSize_.Y() / 2.0f, 0.0f );
 	if ( pos.Y() + SpriteSize_.Y() * .5f >= MaxLocation_ )
-		pos = Bubblewrap::Math::Vector2f( pos.X(), MaxLocation_ - SpriteSize_.Y() / 2.0f );
+		pos = Bubblewrap::Math::Vector3f( pos.X(), MaxLocation_ - SpriteSize_.Y() / 2.0f, 0.0f );
 
 	GetParentEntity()->SetLocalPosition(pos);
 }
@@ -68,7 +68,7 @@ void GaPaddle::OnAttach()
 
 	SpriteSize_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Render::Sprite>()[ 0 ]->GetSize();
 
-	GetParentEntity()->SetLocalPosition(Bubblewrap::Math::Vector2f(XPosition_, (MaxLocation_ + MinLocation_) * 0.5f));
+	GetParentEntity()->SetLocalPosition(Bubblewrap::Math::Vector3f(XPosition_, (MaxLocation_ + MinLocation_) * 0.5f, 0.0f ));
 }
 
 void GaPaddle::OnDetach()

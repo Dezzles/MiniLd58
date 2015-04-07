@@ -2,6 +2,11 @@
 	"name" : "textures",
 	"resources" : [
 		{
+			"type" : "SoundBuffer",
+			"filename" : "Sounds/SwipeAttack.ogg",
+			"name" : "SwipeAttack"
+		},
+		{
 			"type" : "Texture",
 			"texture" : "player1.png",
 			"name" : "Paddle"

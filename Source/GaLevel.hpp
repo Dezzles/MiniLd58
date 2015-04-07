@@ -23,7 +23,7 @@ public:
 	void InputFunction( Bubblewrap::Events::Event* Event );
 	Bubblewrap::Math::Bounds1f GetBounds( float Position );
 	Bubblewrap::Math::Bounds1f GetSideBounds( );
-	Bubblewrap::Math::Vector2f GetCentre();
+	Bubblewrap::Math::Vector3f GetCentre();
 private:
 
 	float DefaultLeft_;

@@ -4,18 +4,12 @@
 		{
 			"type" : "Entity",
 			"name" : "LevelEntity",
-			"position" : {
-				"x" : 0,
-				"y" : 0
-			},
+			"position" : "0 0 0",
 			"children" : [
 				{
 					"type" : "Entity",
 					"name" : "PongBall",
-					"position" : {
-						"x" : 50,
-						"y" : 0
-					},
+					"position" : "50 0 0",
 					"children" :
 					[
 					],
@@ -33,6 +27,11 @@
 							}
 						},
 						{
+							"type" : "Sound",
+							"name" : "AttackSound",
+							"resource" : "textures:SwipeAttack"
+						},
+						{
 							"type" : "GaPong",
 							"minLocation" : 50,
 							"maxLocation" : 550,
@@ -47,10 +46,7 @@
 				{
 					"type" : "Entity",
 					"name" : "PlayerPong",
-					"position" : {
-						"x" : 50,
-						"y" : 0
-					},
+					"position" : "50 0 0",
 					"children" :
 					[
 					],
@@ -98,10 +94,7 @@
 				{
 					"type" : "Entity",
 					"name" : "EnemyPong",
-					"position" : {
-						"x" : 50,
-						"y" : 0
-					},
+					"position" : "50 0 0",
 					"children" :
 					[
 					],
@@ -110,7 +103,7 @@
 						{
 							"type" : "Text",
 							"name" : "Title",
-							"position" : "0 -75",
+							"position" : "0 -75 0",
 							"colour" : "255 255 255 255",
 							"font" : "textures:TitleFont",
 							"window" : "Main",
@@ -152,7 +145,7 @@
 				{
 					"type" : "Text",
 					"name" : "Title",
-					"position" : "400 300",
+					"position" : "400 300 0",
 					"colour" : "255 255 255 255",
 					"font" : "textures:TitleFont",
 					"window" : "Main",
@@ -168,6 +161,12 @@
 					"right" : 750,
 					"top" : 50,
 					"bottom" : 550
+				},
+				{
+					"type" : "Music",
+					"filename" : "cylinder eight.ogg",
+					"autoplay" : false,
+					"volume" : 0.5
 				},
 				{
 					"type" : "Vertices",

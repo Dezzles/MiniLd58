@@ -25,6 +25,25 @@ project "PongVorce"
 		additionalLibraries
 
 	}
+	
+	configuration "CrashNBurn"
+		targetdir ( "../build/lib/crashnburn" )
+		defines { "DEBUG", "CRASHNBURN" }
+		flags { "Symbols" }
+		links
+		{
+			SFML2DIR .. "/lib/sfml-graphics-d",
+			SFML2DIR .. "/lib/sfml-window-d",
+			SFML2DIR .. "/lib/sfml-system-d",
+			SFML2DIR .. "/lib/sfml-audio-d"
+		
+		}
+		libdirs
+		{
+			"../build/lib/debug"
+		}
+
+
 	configuration "Debug"
 		defines { "DEBUG" }
 		flags { "Symbols" }

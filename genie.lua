@@ -5,7 +5,7 @@ additionalLibraries = {}
 dofile ( "bubblewrap/Scripts/Bubblewrap_Scripts.lua" )
 
 solution "BubbleWrap"
-	configurations { "Debug", "Release" }
+	configurations { "Debug", "Release", "CrashNBurn" }
 	location "build"
 
 

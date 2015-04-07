@@ -7,7 +7,8 @@
 
 enum GaEvents
 {
-	GaCollissionEvent = Bubblewrap::Events::EventTypes::LastEvent
+	GaCollissionEvent = Bubblewrap::Events::EventTypes::LastEvent,
+	GaScoreEvent
 };
 
 class GaCollisionEvent 

@@ -17,7 +17,7 @@ void GaLevel::Initialise( Json::Value Params )
 
 void GaLevel::Update( float dt )
 {
-	Bubblewrap::Math::Vector2f pos = GetParentEntity()->LocalPosition();
+	Bubblewrap::Math::Vector3f pos = GetParentEntity()->LocalPosition();
 
 	float moveSpeed = 0.0f;
 
@@ -85,9 +85,9 @@ Bubblewrap::Math::Bounds1f GaLevel::GetBounds( float Position )
 	return Bubblewrap::Math::Bounds1f(MidLower, MidUpper);
 }
 
-Bubblewrap::Math::Vector2f GaLevel::GetCentre()
+Bubblewrap::Math::Vector3f GaLevel::GetCentre()
 {
-	return Bubblewrap::Math::Vector2f( ( DefaultRight_ + DefaultLeft_ ) * 0.5f, ( DefaultBottom_ + DefaultTop_ ) * 0.5f );
+	return Bubblewrap::Math::Vector3f( ( DefaultRight_ + DefaultLeft_ ) * 0.5f, ( DefaultBottom_ + DefaultTop_ ) * 0.5f, 0.0f );
 }
 
 Bubblewrap::Math::Bounds1f GaLevel::GetSideBounds()

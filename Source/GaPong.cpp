@@ -19,8 +19,8 @@ void GaPong::Initialise( Json::Value Params )
 
 void GaPong::Update( float dt )
 {
-	Bubblewrap::Math::Vector2f StartPos = GetParentEntity()->WorldPosition();
-	Bubblewrap::Math::Vector2f pos = GetParentEntity()->LocalPosition();
+	Bubblewrap::Math::Vector3f StartPos = GetParentEntity()->WorldPosition();
+	Bubblewrap::Math::Vector3f pos = GetParentEntity()->LocalPosition();
 
 	pos = pos + MoveDirection_ * CurrentSpeed_ * dt;
 
@@ -59,11 +59,12 @@ void GaPong::Update( float dt )
 		Bubblewrap::Events::Event evt( GaCollissionEvent, new GaCollisionEvent( Hit->GetParentEntity() ) );
 		GetManager().GetEventManager().SendMessage(evt);
 		printf("Current Speed: %f\n", CurrentSpeed_);
-		GetParentEntity()->Destroy();
+
+		Sound_->Play();
 	}
 
 	GetParentEntity()->SetLocalPosition( pos );
-	Bubblewrap::Math::Vector2f EndPos = GetParentEntity()->WorldPosition();
+	Bubblewrap::Math::Vector3f EndPos = GetParentEntity()->WorldPosition();
 }
 
 void GaPong::Copy( GaPong* Target, GaPong* Base )
@@ -86,8 +87,10 @@ void GaPong::OnAttach()
 
 	SpriteSize_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Render::Sprite>()[ 0 ]->GetSize();
 
-	MoveDirection_ = Bubblewrap::Math::Vector2f(3000 - rand() % 6000, 1000 - rand() % 2000 ).Normalised();
+	MoveDirection_ = Bubblewrap::Math::Vector3f(3000 - rand() % 6000, 1000 - rand() % 2000, 0.0f ).Normalised();
 	Paddles_ = GetParentEntity()->GetRootEntity()->GetComponentsByTypeAnyChild<GaPaddle>();
+
+	Sound_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Audio::Sound>()[ 0 ];
 }
 
 void GaPong::OnDetach()
@@ -97,7 +100,7 @@ void GaPong::OnDetach()
 
 GaPaddle* GaPong::CheckForCollisions()
 {
-	Bubblewrap::Math::Vector2f pos = GetParentEntity()->WorldPosition();
+	Bubblewrap::Math::Vector3f pos = GetParentEntity()->WorldPosition();
 	float myX1 = pos.X() - SpriteSize_.X() * 0.5f;
 	float myX2 = pos.X() + SpriteSize_.X() * 0.5f;
 	float myY1 = pos.Y() - SpriteSize_.Y() * 0.5f;
