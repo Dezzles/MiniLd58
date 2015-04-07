@@ -7,7 +7,7 @@
 #include "Bubblewrap/Math/Vector2.hpp"
 #include "Bubblewrap/Events/Events.hpp"
 #include "Bubblewrap/Math/Bounds1.hpp"
-#include "Bubblewrap/Sound/Sound.hpp"
+#include "Bubblewrap/Audio/Sound.hpp"
 #include "GaLevel.hpp"
 #include "GaPaddle.hpp"
 class GaPong : public Bubblewrap::Base::Component
