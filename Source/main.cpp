@@ -31,10 +31,10 @@ int main()
 	settings.Resources_.push_back( "textures" );
 	settings.TypeRegistration_ = ( [ ]( Bubblewrap::Base::ObjectRegister* Register )
 	{
-		Register->RegisterCreator( "GaPaddle", GaPaddle::Create, GaPaddle::CreateJson, GaPaddle::CopyDef );
-		Register->RegisterCreator( "GaPong", GaPong::Create, GaPong::CreateJson, GaPong::CopyDef );
-		Register->RegisterCreator( "GaLevel", GaLevel::Create, GaLevel::CreateJson, GaLevel::CopyDef );
-		Register->RegisterCreator( "GaTextController", GaTextController::Create, GaTextController::CreateJson, GaTextController::CopyDef );
+		Register->RegisterCreator( "GaPaddle", GaPaddle::Create, GaPaddle::CopyDef );
+		Register->RegisterCreator( "GaPong", GaPong::Create, GaPong::CopyDef );
+		Register->RegisterCreator( "GaLevel", GaLevel::Create, GaLevel::CopyDef );
+		Register->RegisterCreator( "GaTextController", GaTextController::Create, GaTextController::CopyDef );
 	} );
 	settings.Packages_.push_back( "basics.json" );
 	settings.BaseObject_ = "basics:LevelEntity";
