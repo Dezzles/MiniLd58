@@ -65,14 +65,14 @@ void GaLevel::OnAttach()
 
 	BorderRender_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Render::Vertices>()[ 0 ];
 
-	InputIdx_ = GetManager().GetEventManager().RegisterEvent( Bubblewrap::Events::EventTypes::Input,
-		std::bind( &GaLevel::InputFunction, this, std::placeholders::_1 ) );
+/*	InputIdx_ = GetManager().GetEventManager().RegisterEvent( Bubblewrap::Events::EventTypes::Input,
+		std::bind( &GaLevel::InputFunction, this, std::placeholders::_1 ) );/**/
 
 }
 
 void GaLevel::OnDetach()
 {
-	GetManager().GetEventManager().DeregisterEvent(InputIdx_);
+//	GetManager().GetEventManager().DeregisterEvent(InputIdx_);
 }
 
 Bubblewrap::Math::Bounds1f GaLevel::GetBounds( float Position )

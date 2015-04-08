@@ -57,7 +57,7 @@ void GaPong::Update( float dt )
 		CurrentSpeed_ = SpeedBounds_.Restrict( CurrentSpeed_ * Multiplier_ );
 		pos = pos + 2.0f * MoveDirection_ * CurrentSpeed_ * dt;
 		Bubblewrap::Events::Event evt( GaCollissionEvent, new GaCollisionEvent( Hit->GetParentEntity() ) );
-		GetManager().GetEventManager().SendMessage(evt);
+		GetManager().GetEventManager().QueueEvent(evt);
 		printf("Current Speed: %f\n", CurrentSpeed_);
 
 		Sound_->Play();

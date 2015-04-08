@@ -59,7 +59,7 @@ void GaTextController::OnCollision( Bubblewrap::Events::Event* Event )
 void GaTextController::OnAttach()
 {
 
-	InputIdx_ = GetManager().GetEventManager().RegisterEvent( GaCollissionEvent,
+	CollisionHandle_ = GetManager().GetEventManager().RegisterEvent( GaCollissionEvent,
 		std::bind( &GaTextController::OnCollision, this, std::placeholders::_1 ) );
 	AllStrings_ = (Bubblewrap::Data::StringList*)GetRegister().GetResource(StringListName_);
 	MyText_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Render::Text>()[0];
@@ -68,5 +68,5 @@ void GaTextController::OnAttach()
 
 void GaTextController::OnDetach()
 {
-	GetManager().GetEventManager().DeregisterEvent(InputIdx_);
+	CollisionHandle_.Destroy();
 }

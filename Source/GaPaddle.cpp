@@ -63,7 +63,7 @@ void GaPaddle::InputFunction( Bubblewrap::Events::Event* Event )
 
 void GaPaddle::OnAttach()
 {
-	InputIdx_ = GetManager().GetEventManager().RegisterEvent(Bubblewrap::Events::EventTypes::Input, 
+	InputHandle_ = GetManager().GetEventManager().RegisterEvent(Bubblewrap::Events::EventTypes::Input, 
 		std::bind( &GaPaddle::InputFunction, this, std::placeholders::_1 ) );
 
 	SpriteSize_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Render::Sprite>()[ 0 ]->GetSize();
@@ -73,7 +73,7 @@ void GaPaddle::OnAttach()
 
 void GaPaddle::OnDetach()
 {
-	GetManager().GetEventManager().DeregisterEvent( InputIdx_ );
+	InputHandle_.Destroy();
 }
 
 Bubblewrap::Math::Vector2f GaPaddle::GetSize()

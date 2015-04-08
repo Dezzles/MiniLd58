@@ -6,6 +6,7 @@
 #include "Bubblewrap/Base/Base.hpp"
 #include "Bubblewrap/Math/Vector2.hpp"
 #include "Bubblewrap/Events/Events.hpp"
+#include "Bubblewrap/Events/EventHandle.hpp"
 
 class GaPaddle : public Bubblewrap::Base::Component
 { 
@@ -23,7 +24,7 @@ public:
 	Bubblewrap::Math::Vector2f GetSize();
 private:
 	bool IsPlayer_;
-	unsigned int InputIdx_;
+	Bubblewrap::Events::EventHandle InputHandle_;
 
 	bool UpKeyDown_;
 	bool DownKeyDown_;

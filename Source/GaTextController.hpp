@@ -5,6 +5,7 @@
 #include "Bubblewrap/Base/Component.hpp"
 #include "Bubblewrap/Base/Base.hpp"
 #include "Bubblewrap/Events/Event.hpp"
+#include "Bubblewrap/Events/EventHandle.hpp"
 #include "Bubblewrap/Render/Text.hpp"
 #include "Bubblewrap/Data/StringList.hpp"
 
@@ -22,7 +23,7 @@ public:
 	void OnCollision( Bubblewrap::Events::Event* Event );
 private:
 
-	unsigned int InputIdx_;
+	Bubblewrap::Events::EventHandle CollisionHandle_;
 
 	std::string StringListName_;
 	float DisplayTime_;

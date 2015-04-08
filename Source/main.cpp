@@ -19,7 +19,7 @@ int main()
 	Bubblewrap::Math::Bounds2f test1( 0.0f, 1.0f, 1.0f, 3.0f );
 	Bubblewrap::Math::Bounds3f test2( 0.0f, 1.0f, 1.0f, 2.0f, -1.0f, 0.0f );
 	Bubblewrap::Render::Colour Colour("255 255 255 128");
-	Bubblewrap::Game::GoGameSettings settings;
+	Bubblewrap::Game::GameSettings settings;
 	settings.WindowCount_ = 1;
 	settings.WindowSettings_ = new Bubblewrap::Render::Window::WindowSettings[ 2 ];
 	settings.WindowSettings_[ 0 ].Width_ = 800;
