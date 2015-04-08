@@ -8,8 +8,7 @@
 #include "GaLevel.hpp"
 #include "Bubblewrap/Events/Event.hpp"
 
-#include "Bubblewrap/Registers/BubblewrapSfmlGraphicsRegister.hpp"
-#include "Bubblewrap/Registers/BubblewrapSfmlSoundRegister.hpp"
+#include "Bubblewrap/Registers/SfmlRegisters.hpp"
 #include "Bubblewrap/Math/Bounds1.hpp"
 #include "Bubblewrap/Math/Bounds2.hpp"
 #include "Bubblewrap/Math/Bounds3.hpp"
@@ -26,8 +25,8 @@ int main()
 	settings.WindowSettings_[ 0 ].Height_ = 600;
 	settings.WindowSettings_[ 0 ].Title_ = "POTATO";
 	settings.WindowSettings_[ 0 ].Name_ = "Main";
-	settings.Registers_.push_back( Bubblewrap::Registers::SfmlGraphicsRegister::Register );
-	settings.Registers_.push_back( Bubblewrap::Registers::SfmlSoundRegister::Register );
+	settings.Registers_.push_back( Bubblewrap::Registers::SfmlRegisters::RegisterGraphics );
+	settings.Registers_.push_back( Bubblewrap::Registers::SfmlRegisters::RegisterAudio );
 	settings.Resources_.push_back( "textures" );
 	settings.TypeRegistration_ = ( [ ]( Bubblewrap::Base::ObjectRegister* Register )
 	{
