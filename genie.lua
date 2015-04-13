@@ -1,4 +1,4 @@
-SFML2DIR = "D:/Projects/Libraries/SFML-2.2"
+SFML2DIR = "/home/dezzles/Documents/libraries/SFML-2.2"
 additionalIncludes = {}
 additionalLibraries = {}
 

@@ -26,6 +26,7 @@ project "PongVorce"
 
 	}
 	
+	buildoptions "-std=c++11"
 	configuration "CrashNBurn"
 		targetdir ( "../build/lib/crashnburn" )
 		defines { "DEBUG", "CRASHNBURN" }
