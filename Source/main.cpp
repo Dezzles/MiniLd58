@@ -1,17 +1,11 @@
-#include "Bubblewrap/Base/Game.hpp"
-#include "Bubblewrap/Managers/Container.hpp"
-#include "Bubblewrap/Render/Window.hpp"
-#include "Bubblewrap/Render/Types.hpp"
 #include "GaPaddle.hpp"
 #include "GaPong.hpp"
 #include "GaTextController.hpp"
 #include "GaLevel.hpp"
-#include "Bubblewrap/Events/Event.hpp"
-
+#include "Bubblewrap/Bubblewrap.hpp"
+#include "Bubblewrap/Registers/BubblewrapRegister.hpp"
 #include "Bubblewrap/Registers/SfmlRegisters.hpp"
-#include "Bubblewrap/Math/Bounds1.hpp"
-#include "Bubblewrap/Math/Bounds2.hpp"
-#include "Bubblewrap/Math/Bounds3.hpp"
+
 int main()
 {
 	Bubblewrap::Math::Bounds1f test( 0.0f, 1.0f );
@@ -25,6 +19,8 @@ int main()
 	settings.WindowSettings_[ 0 ].Height_ = 600;
 	settings.WindowSettings_[ 0 ].Title_ = "POTATO";
 	settings.WindowSettings_[ 0 ].Name_ = "Main";
+	Bubblewrap::Logs::StaticLog::Instance()->SetLogLevel( Bubblewrap::Logs::StaticLog::VERBOSE );
+	settings.Registers_.push_back( Bubblewrap::Registers::SfmlRegisters::RegisterUtilities );
 	settings.Registers_.push_back( Bubblewrap::Registers::SfmlRegisters::RegisterGraphics );
 	settings.Registers_.push_back( Bubblewrap::Registers::SfmlRegisters::RegisterAudio );
 	settings.Resources_.push_back( "textures" );
