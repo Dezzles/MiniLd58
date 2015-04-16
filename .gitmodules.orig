@@ -1,0 +1,13 @@
+[submodule "bubblewrap"]
+	path = bubblewrap
+<<<<<<< HEAD
+url=https://github.com/bubblewrap-engine/bubblewrap.git
+[submodule "bubblewrap_sfml"]
+	path = bubblewrap_sfml
+url=https://github.com/bubblewrap-engine/bubblewrap_sfml.git
+=======
+	url = https://github.com/bubblewrap-engine/bubblewrap.git
+[submodule "bubblewrap_sfml"]
+	path = bubblewrap_sfml
+	url = https://github.com/bubblewrap-engine/bubblewrap_sfml.git
+>>>>>>> cd247bdc8158a9a04e3d706e60859f96c956ae7c

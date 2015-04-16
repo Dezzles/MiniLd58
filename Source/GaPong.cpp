@@ -87,7 +87,7 @@ void GaPong::OnAttach()
 
 	SpriteSize_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Render::Sprite>()[ 0 ]->GetSize();
 
-	MoveDirection_ = Bubblewrap::Math::Vector3f(3000 - rand() % 6000, 1000 - rand() % 2000, 0.0f ).Normalised();
+	MoveDirection_ = Bubblewrap::Math::Vector3f(( float )( 3000 - rand() % 6000 ), ( float )( 1000 - rand() % 2000 ), 0.0f ).Normalised();
 	Paddles_ = GetParentEntity()->GetRootEntity()->GetComponentsByTypeAnyChild<GaPaddle>();
 
 	Sound_ = GetParentEntity()->GetComponentsByType<Bubblewrap::Audio::Sound>()[ 0 ];

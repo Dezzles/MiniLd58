@@ -36,7 +36,8 @@ project "PongVorce"
 			SFML2DIR .. "/lib/sfml-graphics-d",
 			SFML2DIR .. "/lib/sfml-window-d",
 			SFML2DIR .. "/lib/sfml-system-d",
-			SFML2DIR .. "/lib/sfml-audio-d"
+			SFML2DIR .. "/lib/sfml-audio-d",
+			PHYSFSBUILDDIR .. "/Debug/physfs"
 		
 		}
 		libdirs
@@ -53,8 +54,8 @@ project "PongVorce"
 			SFML2DIR .. "/lib/sfml-graphics-d",
 			SFML2DIR .. "/lib/sfml-window-d",
 			SFML2DIR .. "/lib/sfml-system-d",
-			SFML2DIR .. "/lib/sfml-audio-d"
-		
+			SFML2DIR .. "/lib/sfml-audio-d",
+			PHYSFSBUILDDIR .. "/Release/physfs"
 		}
 		libdirs
 		{

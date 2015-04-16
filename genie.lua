@@ -1,10 +1,10 @@
-SFML2DIR = "/home/dezzles/Documents/libraries/SFML-2.2"
+dofile( "params-" .. _ACTION .. ".lua" )
 additionalIncludes = {}
 additionalLibraries = {}
 
 dofile ( "bubblewrap/Scripts/Bubblewrap_Scripts.lua" )
 
-solution "BubbleWrap"
+solution "PongVorce"
 	configurations { "Debug", "Release", "CrashNBurn" }
 	location "build"
 
